@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Inhabitants</title>
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	<!-- bootstrap --> 
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+	<!-- backbone and dependancies -->
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script> 
+	<!-- homebrew CSS -->
+	<link rel="stylesheet" href="./stylesheets/styles.css">
+	
+</head>
+<body>
+	<header id="header">
+		<h1>Inhabitants of The Island</h1>
+	</header>
+	<div id="contacts">
+		<form id="addContact" action="#">
+			<div>
+				<input id="name" placeholder="name" required="required">
+				<input id="age" placeholder="age" required="required">
+				<input id="address" placeholder="city" required="required">
+				<input id="phone_number" placeholder="digits" required="required">
+				<select id="category_id">
+					<option value="6">Survivors</option>
+					<option value="7">Others</option>
+					<option value="8">Dharma</option>
+				</select> 
+				<button id="add">Submit</button>
+			</div>
+		</form>
+	</div>
+	<div class="contactContainer">
+	</div>
+	<script type="text/template" id="contact-template">
+		<div class="view">
+			<label><%= name %></label>
+			<ul>
+				<li>age: <%= age %></li>
+				<li>address: <%= address %></li>
+				<li>phone number: <%= phone_number %></li>
+				<li>picture: <img src="<%= picture %>"></li>
+				<li>Tribe: <%= category_id %></li>
+			</ul>
+
+			<button class="delete">Delete</button>
+		</div>
+	</script>
+	<script type="text/template" id="#">
+		<input class="edit" value="<%= name %>">
+		<input class="edit" value="<%= age %>">
+		<input class="edit" value="<%= address %>">
+		<input class="edit" value="<%= phone_number %>">
+		<input class="edit" value="<%= url %>">
+		<select class="edit" name="category_id">
+			<option value="6">Survivors</option>
+			<option value="7">Others</option>
+			<option value="8">Dharma</option>
+		</select>
+		<button id="save">Save contact</button>
+	</script>
+	<script src="javascripts/models/contact.js"></script>
+	<script src="javascripts/collections/list.js"></script>
+	<script src="javascripts/views/contact.js"></script>
+	<script src="javascripts/views/list.js"></script>
+	<script src="javascripts/app.js"></script>
+</body>
+</html>
